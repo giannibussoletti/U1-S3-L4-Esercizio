@@ -1,0 +1,25 @@
+body {
+  width: 100%;
+}
+
+.main-container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+#cartellone-tombola {
+  border: 1px solid;
+  width: 1000px;
+  height: 300px;
+}
+
+.numeri {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  border: 1px solid;
+  margin: 0;
+  padding: 1em;
+}
