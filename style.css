@@ -1,12 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   background-color: #f6f0eb;
 }
 
+#drawn-number span,
+h1 {
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4em;
+  margin: 0.5em;
+}
+
 h1 {
   text-align: center;
+  color: #f09038;
+  text-shadow: 0.5px 1px 1px #00000025;
 }
 
 .main-container {
@@ -20,12 +31,15 @@ h1 {
 
 button {
   margin: 2em;
-  padding: 2em;
+  padding: 1.5em 4em;
   background-color: #f09038;
   font-weight: 900;
+  font-size: 1em;
   color: #f6f0eb;
   border: none;
+  border-radius: 50px;
   text-transform: uppercase;
+  box-shadow: 0 4px 0 -1px #7e4d1e;
 }
 
 #cartellone-tombola {
@@ -59,4 +73,8 @@ button {
 
 .drawn-number {
   background-color: #ff3300;
+}
+
+#drawn-number span {
+  font-size: 5em;
 }
