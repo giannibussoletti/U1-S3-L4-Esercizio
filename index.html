@@ -12,9 +12,12 @@
     <div class="main-container">
       <header><h1>Tombola</h1></header>
       <main>
-        <section>
+        <section class="main-board">
           <div id="cartellone-tombola"></div>
-          <button onclick="estrazioneNum(event)">Estrai</button>
+          <div class="aside">
+            <button onclick="estrazioneNum(event)">Estrai</button>
+            <div id="drawn-number"></div>
+          </div>
         </section>
       </main>
 
