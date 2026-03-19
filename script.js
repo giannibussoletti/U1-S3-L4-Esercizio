@@ -42,6 +42,5 @@ const estrazioneNum = () => {
     const buttonDisabled = document.querySelector("button")
     buttonDisabled.setAttribute("disabled", "disabled")
     buttonDisabled.style.filter = "saturate(0)"
-    console.log("ciao")
   }
 }
