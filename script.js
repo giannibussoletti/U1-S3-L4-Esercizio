@@ -1,4 +1,4 @@
-const daUnoaNovanta = [
+let daUnoaNovanta = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
   28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
   52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75,
@@ -19,29 +19,32 @@ const spawnCell = () => {
 }
 spawnCell()
 
-const appendingNumber = document.getElementById("drawn-number")
-const spanNumber = document.createElement("span")
-const drawnCell = document.getElementsByClassName("numeri")
+const estrazioneNum = () => {
+  const appendingNumber = document.getElementById("drawn-number")
+  const spanNumber = document.createElement("span")
+  const drawnCell = document.getElementsByClassName("numeri")
+  const footerNumber = document.querySelector("footer div")
 
-const randomNumber = () => Math.ceil(Math.random() * 90)
-const varRandomNumber = randomNumber()
-
-const extratingNumber = () => {
+  const randomNumber = () => Math.ceil(Math.random() * daUnoaNovanta.length)
+  const varRandomNumber = randomNumber()
+  console.log(daUnoaNovanta.length)
   appendingNumber.innerHTML = ""
   spanNumber.innerText = varRandomNumber
   appendingNumber.appendChild(spanNumber)
   drawnCell[varRandomNumber - 1].classList.add("drawn-number")
-  daUnoaNovanta.shift(varRandomNumber)
+  const slicedPositive = daUnoaNovanta.splice(0, varRandomNumber - 1)
+  const slicedNegative = daUnoaNovanta.splice(varRandomNumber - 1)
+  slicedNegative.shift()
+  const newArrayExtract = []
+  for (let i = 0; i < slicedPositive.length; i++) {
+    newArrayExtract.push(slicedPositive[i])
+  }
+  for (let i = 0; i < slicedNegative.length; i++) {
+    newArrayExtract.push(slicedNegative[i])
+  }
+  daUnoaNovanta = newArrayExtract
 }
 
-const estrazioneNum = (event) => {
-  for (let i = 0; i < daUnoaNovanta.length; i++) {
-    if (daUnoaNovanta.includes(varRandomNumber) === true) {
-      extratingNumber()
-    } else if (daUnoaNovanta.includes(varRandomNumber) === true) {
-    }
-  }
-}
 // Se il numero è presente nell'array allora fai tutta la tiritera
 // per creare lo span e mettere la la casella rossa e poi togli il numero dall'array
 
