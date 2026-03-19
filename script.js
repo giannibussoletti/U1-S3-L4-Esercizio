@@ -23,40 +23,25 @@ const estrazioneNum = () => {
   const appendingNumber = document.getElementById("drawn-number")
   const spanNumber = document.createElement("span")
   const drawnCell = document.getElementsByClassName("numeri")
-  const footerNumber = document.querySelector("footer div")
-  const randomNumber = () => Math.ceil(Math.random() * daUnoaNovanta.length)
-
-  const varRandomNumber = randomNumber()
   appendingNumber.innerHTML = ""
+
+  const randomNumber = () => Math.ceil(Math.random() * daUnoaNovanta.length)
+  const varRandomNumber = randomNumber()
 
   spanNumber.innerText = daUnoaNovanta[varRandomNumber - 1]
   numberDrawnInt = parseInt(spanNumber.innerText)
 
   appendingNumber.appendChild(spanNumber)
-  console.log(spanNumber.innerText, daUnoaNovanta.length)
+
   drawnCell[numberDrawnInt - 1].classList.add("drawn-number")
 
   const filteredNumber = daUnoaNovanta.filter((n) => n !== numberDrawnInt)
   daUnoaNovanta = filteredNumber
+
+  if (daUnoaNovanta.length === 0) {
+    const buttonDisabled = document.querySelector("button")
+    buttonDisabled.setAttribute("disabled", "disabled")
+    buttonDisabled.style.filter = "saturate(0)"
+    console.log("ciao")
+  }
 }
-
-// Se il numero è presente nell'array allora fai tutta la tiritera
-// per creare lo span e mettere la la casella rossa e poi togli il numero dall'array
-
-// Se invece il numero non è presente nell'array ritira il dado
-// const estrazioneNum = (event) =>{
-// // if(){
-
-// // }else
-// //
-// const slicedPositive = daUnoaNovanta.splice(0, varRandomNumber - 1)
-//   const slicedNegative = daUnoaNovanta.splice(varRandomNumber - 1)
-//   slicedNegative.shift()
-//   const newArrayExtract = []
-//   for (let i = 0; i < slicedPositive.length; i++) {
-//     newArrayExtract.push(slicedPositive[i])
-//   }
-//   for (let i = 0; i < slicedNegative.length; i++) {
-//     newArrayExtract.push(slicedNegative[i])
-//   }
-//   daUnoaNovanta = newArrayExtract
