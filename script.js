@@ -24,25 +24,20 @@ const estrazioneNum = () => {
   const spanNumber = document.createElement("span")
   const drawnCell = document.getElementsByClassName("numeri")
   const footerNumber = document.querySelector("footer div")
-
   const randomNumber = () => Math.ceil(Math.random() * daUnoaNovanta.length)
+
   const varRandomNumber = randomNumber()
-  console.log(daUnoaNovanta.length)
   appendingNumber.innerHTML = ""
-  spanNumber.innerText = varRandomNumber
+
+  spanNumber.innerText = daUnoaNovanta[varRandomNumber - 1]
+  numberDrawnInt = parseInt(spanNumber.innerText)
+
   appendingNumber.appendChild(spanNumber)
-  drawnCell[varRandomNumber - 1].classList.add("drawn-number")
-  const slicedPositive = daUnoaNovanta.splice(0, varRandomNumber - 1)
-  const slicedNegative = daUnoaNovanta.splice(varRandomNumber - 1)
-  slicedNegative.shift()
-  const newArrayExtract = []
-  for (let i = 0; i < slicedPositive.length; i++) {
-    newArrayExtract.push(slicedPositive[i])
-  }
-  for (let i = 0; i < slicedNegative.length; i++) {
-    newArrayExtract.push(slicedNegative[i])
-  }
-  daUnoaNovanta = newArrayExtract
+  console.log(spanNumber.innerText, daUnoaNovanta.length)
+  drawnCell[numberDrawnInt - 1].classList.add("drawn-number")
+
+  const filteredNumber = daUnoaNovanta.filter((n) => n !== numberDrawnInt)
+  daUnoaNovanta = filteredNumber
 }
 
 // Se il numero è presente nell'array allora fai tutta la tiritera
@@ -54,3 +49,14 @@ const estrazioneNum = () => {
 
 // // }else
 // //
+// const slicedPositive = daUnoaNovanta.splice(0, varRandomNumber - 1)
+//   const slicedNegative = daUnoaNovanta.splice(varRandomNumber - 1)
+//   slicedNegative.shift()
+//   const newArrayExtract = []
+//   for (let i = 0; i < slicedPositive.length; i++) {
+//     newArrayExtract.push(slicedPositive[i])
+//   }
+//   for (let i = 0; i < slicedNegative.length; i++) {
+//     newArrayExtract.push(slicedNegative[i])
+//   }
+//   daUnoaNovanta = newArrayExtract
