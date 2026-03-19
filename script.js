@@ -34,19 +34,11 @@ const extratingNumber = () => {
   daUnoaNovanta.shift(varRandomNumber)
 }
 
-//   for (let i = 0; i < daUnoaNovanta.length; i++) {
-//     if (daUnoaNovanta.includes(varRandomNumber) === true) {
-//       extratingNumber()
-//       console.log(i, varRandomNumber, "if")
-//     } else {
-//     }
-//   }
 const estrazioneNum = (event) => {
   for (let i = 0; i < daUnoaNovanta.length; i++) {
     if (daUnoaNovanta.includes(varRandomNumber) === true) {
       extratingNumber()
-    } else {
-      i = 0
+    } else if (daUnoaNovanta.includes(varRandomNumber) === true) {
     }
   }
 }
