@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   width: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #f6f0eb;
+}
+
+h1 {
+  text-align: center;
 }
 
 .main-container {
@@ -14,10 +21,14 @@ body {
 button {
   margin: 2em;
   padding: 2em;
+  background-color: #f09038;
+  font-weight: 900;
+  color: #f6f0eb;
+  border: none;
+  text-transform: uppercase;
 }
 
 #cartellone-tombola {
-  border: 1px solid;
   width: 1000px;
   height: 300px;
 }
@@ -27,16 +38,25 @@ button {
 }
 
 .numeri {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background-color: aqua;
-  border: 1px solid;
+  border-radius: 100%;
+  display: inline-flex;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  background-color: #e9ddd2;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 1px 1px 2px #00000015;
+}
+
+.testo-numeri {
+  font-size: 2em;
+  font-weight: 900;
+  color: #f6f0eb;
   margin: 0;
-  padding: 1em;
+  text-shadow: 0.5px 1px 1px #00000025;
 }
 
 .drawn-number {
-  background-color: yellow;
+  background-color: #ff3300;
 }

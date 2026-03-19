@@ -2,16 +2,19 @@ const spawnCell = () => {
   const board = document.getElementById("cartellone-tombola")
   for (let i = 0; i < 90; i++) {
     const numberCell = document.createElement("div")
+    const parCreation = document.createElement("p")
     numberCell.classList.add("numeri")
-    numberCell.innerText = i + 1
+    parCreation.classList.add("testo-numeri")
+    parCreation.innerText = i + 1
     board.appendChild(numberCell)
+    numberCell.appendChild(parCreation)
   }
 }
 spawnCell()
 
 const randomNumber = () => Math.ceil(Math.random() * 90)
 const appendingNumber = document.getElementById("drawn-number")
-
+let array = []
 const estrazioneNum = (event) => {
   appendingNumber.innerHTML = ""
   const spanNumber = document.createElement("span")
